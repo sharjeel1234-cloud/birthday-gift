@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Countdown Screen */
+#countdown-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-box {
+    font-size: 3rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #e94560;
+    transition: 0.3s;
+    display: none;
+}
+
+/* Gift Screen Gallery Container */
+#gift-screen {
+    display: none;
+    width: 100%;
+}
+
+.gallery-container {
+    position: relative;
+    width: 320px;
+    height: 300px;
+    margin: 0 auto 20px auto;
+}
+
+/* Common Photo Frame Design */
+.photo {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.27), opacity 1.5s ease;
+    opacity: 0;
+}
+
+/* Corner Animations: Start position away from screen, End position in Center Collage */
+.animate-photos .photo-top-left {
+    animation: flyInTL 1.2s forwards 0.2s;
+}
+.animate-photos .photo-top-right {
+    animation: flyInTR 1.2s forwards 0.6s;
+}
+.animate-photos .photo-bottom-left {
+    animation: flyInBL 1.2s forwards 1.0s;
+}
+.animate-photos .photo-bottom-right {
+    animation: flyInBR 1.2s forwards 1.4s;
+}
+
+/* Keyframes for 4 Corners */
+@keyframes flyInTL {
+    from { opacity: 0; transform: translate(-200px, -200px) rotate(-30deg); }
+    to { opacity: 1; transform: translate(10px, 10px) rotate(-10deg); }
+}
+
+@keyframes flyInTR {
+    from { opacity: 0; transform: translate(200px, -200px) rotate(30deg); }
+    to { opacity: 1; transform: translate(160px, 20px) rotate(8deg); }
+}
+
+@keyframes flyInBL {
+    from { opacity: 0; transform: translate(-200px, 200px) rotate(-20deg); }
+    to { opacity: 1; transform: translate(30px, 140px) rotate(5deg); }
+}
+
+@keyframes flyInBR {
+    from { opacity: 0; transform: translate(200px, 200px) rotate(25deg); }
+    to { opacity: 1; transform: translate(140px, 130px) rotate(-8deg); }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    text-shadow: 0 0 15px #e94560;
+}
+
+p.message {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #d1d1e0;
+}
